@@ -1,0 +1,9 @@
+host=freechess.org
+port=5000
+username=
+password=
+adminList=
+enableScheduledEventReminderService=true
+eventsFilePath=events.txt
+serverTimeZone=
+webInterfaceUrl=

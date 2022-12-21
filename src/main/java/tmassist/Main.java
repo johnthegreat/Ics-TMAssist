@@ -147,9 +147,8 @@ public class Main {
 						for(final String line : lines) {
 							tmAssist.parseLine(line.trim());
 						}
-					} catch (IOException e) {
+					} catch (IOException | ServerConnectionClosedException e) {
 						e.printStackTrace(System.err);
-					} catch (ServerConnectionClosedException e) {
 						tmAssist.shutdown();
 						System.exit(1);
 					}

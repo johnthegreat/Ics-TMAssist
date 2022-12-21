@@ -103,7 +103,8 @@ public class ServerInputHandler {
 			final String eventsTable = ScheduledEventUtils.toTable(scheduledEvents, TimeZone.getDefault(), scheduledEventFilter, "\n").trim();
 			final String[] eventsTableLines = Utils.splitToLengthIfPossible(eventsTable,350,"\\n");
 			for(final String eventTableLine : eventsTableLines) {
-				final String commandToWrite = String.format("qtell %s %s", username, eventTableLine.substring(0, eventTableLine.lastIndexOf("\\n")).trim());
+				int lastNewlineIndex = eventTableLine.lastIndexOf("\\n");
+				final String commandToWrite = String.format("qtell %s %s", username, (lastNewlineIndex > 0 ? eventTableLine.substring(0, lastNewlineIndex) : eventTableLine).trim());
 				this.tmAssistBot.getServerConnection().write(commandToWrite);
 			}
 			return true;

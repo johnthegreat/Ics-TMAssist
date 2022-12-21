@@ -10,7 +10,7 @@ public class TMAssist {
 	/**
 	 * This has to be manually updated
 	 */
-	public static final String compileDate = "1/10/2022";
+	public static final String compileDate = "12/21/2022";
 	
 	public static void handleError(Throwable t) {
 		t.printStackTrace(System.err);
